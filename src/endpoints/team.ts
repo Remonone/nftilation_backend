@@ -4,7 +4,9 @@ import { Request, Response } from "express";
 
 
 export const fetchTeams = async (req: Request, res: Response) => {
-    const list = await db.collection<TeamData>("teams").find().toArray();
+    const list = {
+        teams: await db.collection<TeamData>("teams").find().toArray()
+    }
     console.log(list);
     res.status(200).send(list);
 }
