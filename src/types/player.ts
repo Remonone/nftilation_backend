@@ -1,6 +1,12 @@
-interface PlayerCredentials {
+import { UserRole } from "./userRole";
+
+export interface PlayerCredentials {
     login: string;
     password: string;
 }
 
-export default PlayerCredentials;
+export interface PlayerRegister {
+    login: string;
+    teamName: string;
+    role: UserRole;
+}

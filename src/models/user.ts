@@ -4,7 +4,7 @@ import TeamData from "./team";
 export interface User {
     login: string; // nickname
     password: string;
-    team: TeamData;
+    teamName: string;
     role: UserRole;
 }
 

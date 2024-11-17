@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 
 import account from './routers/account';
+import teams from './routers/team';
+import skins from './routers/skins';
 
 dotenv.config({ path: '.env' });
 const app = express();
@@ -20,6 +22,8 @@ app.use(express.json())
 
 // Set up routers
 app.use('/api/v1/account', account);
+app.use('/api/v1/teams', teams);
+app.use('/api/v1/skins', skins);
 
 
 export default app;
