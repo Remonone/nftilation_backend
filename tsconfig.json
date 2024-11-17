@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist", 
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "ts-node": {
+        "files": true
+    },
+    "exclude": [
+        "*.test.ts",
+        "*.fixture.ts",
+        "db-helper.ts"
+    ]
+}
