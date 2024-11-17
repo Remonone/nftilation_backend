@@ -4,8 +4,9 @@ import { Request, Response } from "express";
 
 
 export const fetchTeams = async (req: Request, res: Response) => {
-    const teams = await db.collection("teams").find();
-    res.status(200).send(teams);
+    const list = await db.collection<TeamData>("teams").find().toArray();
+    console.log(list);
+    res.status(200).send(list);
 }
 
 export const registerTeam = async (req: Request, res: Response) => {
