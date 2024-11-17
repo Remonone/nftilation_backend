@@ -54,6 +54,12 @@ export const register = async (req: Request, res: Response) => {
         teamName: body.teamName,
         role: body.role
     }
-    db.collection("users").insertOne(user);
-    res.status(201);
+    const userToInsert: User = {
+        login: body.login,
+        password: bcrypt.hashSync(password, 10),
+        teamName: body.teamName,
+        role: body.role
+    }
+    db.collection("users").insertOne(userToInsert);
+    res.status(200).send(user);
 }

@@ -11,5 +11,5 @@ export const fetchTeams = async (req: Request, res: Response) => {
 export const registerTeam = async (req: Request, res: Response) => {
     const team: TeamData = req.body;
     await db.collection("teams").insertOne(team);
-    res.status(201);
+    res.status(201).send();
 }

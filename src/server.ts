@@ -20,8 +20,8 @@ async function start() {
     await client.connect();
     app.listen(app.get('port'), () => {
       logger.info(
-        '  App is running at port %d',
-        app.get('port')
+        '  App is running at port ' + app.get('port')
+        
       );
       logger.info('  Press CTRL-C to stop\n');
     });

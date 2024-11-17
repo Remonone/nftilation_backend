@@ -12,5 +12,5 @@ export const getSkin = async (req: Request, res: Response) => {
 export const insertSkin = async (req: Request, res: Response) => {
     const body: SkinInfo = req.body;
     await db.collection("skins").insertOne(body);
-    res.status(201);
+    res.status(201).send();
 }
