@@ -47,16 +47,15 @@ export const register = async (req: Request, res: Response) => {
         res.status(404).send({error: "Team not found"});
         return;
     }
-    const password = generatePassword();
     const user: User = {
         login: body.login,
-        password,
+        password: body.password,
         teamName: body.teamName,
         role: body.role
     }
     const userToInsert: User = {
         login: body.login,
-        password: bcrypt.hashSync(password, 10),
+        password: bcrypt.hashSync(body.password, 10),
         teamName: body.teamName,
         role: body.role
     }

@@ -7,6 +7,7 @@ export interface PlayerCredentials {
 
 export interface PlayerRegister {
     login: string;
+    password: string;
     teamName: string;
     role: UserRole;
 }
